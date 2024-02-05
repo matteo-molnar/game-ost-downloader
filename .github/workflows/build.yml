@@ -40,6 +40,8 @@ jobs:
         release_name: Release ${{ github.run_number }}
         draft: false
         prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
     - name: Upload Executable
       id: upload-release-asset
@@ -49,3 +51,5 @@ jobs:
         asset_path: ./dist/game-ost-downloader.exe
         asset_name: game-ost-downloader.exe
         asset_content_type: application/octet-stream
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
