@@ -55,26 +55,16 @@ class Mp3DownloaderUI:
         urls = self.url_entry.get().split(",")
         output_directory = self.output_entry.get()
 
-        # Create a thread to run the download
         download_thread = threading.Thread(
             target=self.download_files, args=(urls, output_directory)
         )
         download_thread.start()
 
     def download_files(self, urls, output_directory):
-
-        # Example log messages
         self.update_log(f"Downloading MP3s from {urls} to {output_directory}")
-
-        # Replace the following line with your existing code and capture any log messages
-        log_message = "Download operation in progress...\n"
-
-        # Example log message during the download process
-        self.update_log(log_message)
 
         Mp3Downloader(self).start_download(urls=urls, download_dir=output_directory)
 
-        # Example completion message
         self.update_log("Download operation complete!")
 
     def update_log(self, message):
@@ -84,7 +74,6 @@ class Mp3DownloaderUI:
         self.log_text.yview(tk.END)
 
     def clear_log(self):
-        # Clear the log text widget
         self.log_text.delete(1.0, tk.END)
 
     def start_ui(self):
