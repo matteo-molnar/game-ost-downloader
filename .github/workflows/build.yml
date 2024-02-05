@@ -50,6 +50,6 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./dist/game-ost-downloader
         asset_name: game-ost-downloader.exe
-        asset_content_type: application/octet-stream
+        asset_content_type: application/vnd.microsoft.portable-executable
       env:
         GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
