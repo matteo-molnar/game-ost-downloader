@@ -25,9 +25,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Set execute permissions for the build script
-      run: chmod +x ./build.sh
-
     - name: Build Executable
       run: |
         .\build.ps1
