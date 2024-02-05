@@ -1,12 +1,12 @@
 # game-ost-downloader
 
-A program to crawl <http://downloads.khinsider.com/> for game soundtracks and download them.
+A small program for bulk downloading game OSTs from <http://downloads.khinsider.com/>.
 
 ## How To Use
 
 You can download the current version of the application from the [releases page](https://github.com/matteo-molnar/game-ost-downloader/releases).
 
-You will need to provide URLs of the sountracks you would like to download from khinsider. You will also need to specify an output dirctory where the program will save the downloaded files:
+You will need to provide URLs of the sountracks you would like to download from khinsider. An example of a valid URL is <https://downloads.khinsider.com/game-soundtracks/album/moss-book-2018>. You will also need to specify an output dirctory where the program will save the downloaded files.
 
 ![screenshot](/assets/screenshot.png)
 
