@@ -1,0 +1,9 @@
+.venv
+downloads
+.DS_Store
+inputs.txt
+__pycache__
+*.spec
+.mypy_cache
+build
+dist
