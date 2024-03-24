@@ -1,6 +1,7 @@
 import tkinter as tk
 from mp3_downloader import Mp3Downloader
 from tkinter import filedialog
+import os
 import threading
 
 
@@ -22,6 +23,7 @@ class Mp3DownloaderUI:
         output_label = tk.Label(self.root, text="Select Output Directory:")
         output_label.pack()
         self.output_entry = tk.Entry(self.root, width=input_width)
+        self.output_entry.insert(0, os.path.join(os.path.expanduser("~"), "Downloads"))
         self.output_entry.pack()
 
         # Browse button for output directory
