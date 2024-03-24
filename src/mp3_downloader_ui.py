@@ -3,6 +3,7 @@ from mp3_downloader import Mp3Downloader
 from tkinter import filedialog
 import os
 import threading
+import webbrowser
 
 
 class Mp3DownloaderUI:
@@ -31,6 +32,9 @@ class Mp3DownloaderUI:
             self.root, text="Browse", command=self.browse_output_directory
         )
         browse_button.pack()
+
+        site_button = tk.Button(self.root, text="Open Site", command=self.open_url)
+        site_button.pack()
 
         # Run button
         run_button = tk.Button(
@@ -77,6 +81,9 @@ class Mp3DownloaderUI:
 
     def clear_log(self):
         self.log_text.delete(1.0, tk.END)
+
+    def open_url(self):
+        webbrowser.open_new("https://downloads.khinsider.com/")
 
     def start_ui(self):
         self.root.mainloop()
