@@ -20,35 +20,37 @@ class Mp3DownloaderUI:
         self.url_entry = tk.Entry(self.root, width=input_width)
         self.url_entry.pack()
 
+        # Output directory frame
+        output_frame = tk.Frame(self.root)
+        output_frame.pack()
+
         # Output directory entry
-        output_label = tk.Label(self.root, text="Select Output Directory:")
-        output_label.pack()
-        self.output_entry = tk.Entry(self.root, width=input_width)
+        output_label = tk.Label(output_frame, text="Select Output Directory:")
+        output_label.pack(side=tk.TOP)
+        self.output_entry = tk.Entry(output_frame, width=input_width)
         self.output_entry.insert(0, os.path.join(os.path.expanduser("~"), "Downloads"))
-        self.output_entry.pack()
+        self.output_entry.pack(side=tk.LEFT)
 
         # Browse button for output directory
         browse_button = tk.Button(
-            self.root, text="Browse", command=self.browse_output_directory
+            output_frame, text="Browse", command=self.browse_output_directory
         )
-        browse_button.pack()
+        browse_button.pack(side=tk.LEFT)
 
+        # Other buttons and widgets
         site_button = tk.Button(self.root, text="Open Site", command=self.open_url)
         site_button.pack()
 
-        # Run button
         run_button = tk.Button(
             self.root, text="Run Download", command=self.run_download
         )
         run_button.pack()
 
-        # Clear Log button
         clear_log_button = tk.Button(
             self.root, text="Clear Log", command=self.clear_log
         )
         clear_log_button.pack()
 
-        # Output log text widget
         self.log_text = tk.Text(self.root, height=10, width=input_width)
         self.log_text.pack()
 
