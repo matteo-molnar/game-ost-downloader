@@ -1,6 +1,7 @@
 import os
 import urllib.request as urllib2
 from bs4 import BeautifulSoup
+from pathvalidate import sanitize_filename
 
 
 class Mp3Downloader:
@@ -52,7 +53,7 @@ class Mp3Downloader:
             mp3_url = audio.get("src")
             if mp3_url not in downloaded_mp3s:
                 downloaded_mp3s[mp3_url] = True
-                file_name = song_name + ".mp3"
+                file_name = sanitize_filename(song_name + ".mp3")
 
                 mp3file = urllib2.urlopen(mp3_url)
 
